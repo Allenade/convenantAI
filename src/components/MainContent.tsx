@@ -264,6 +264,16 @@ export function MainContent() {
     );
   };
 
+  const messagesEndRef = React.useRef<HTMLDivElement>(null);
+
+  const messageCount = activeConversation()?.messages.length;
+
+  React.useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messageCount]);
+
   return (
     <div className="flex-1 flex flex-col min-w-0">
       {/* Header */}
@@ -307,6 +317,7 @@ export function MainContent() {
                   <MessageItem key={message.id} message={message} />
                 ))}
                 {isLoading && <TypingIndicator />}
+                <div ref={messagesEndRef} />
               </div>
             </div>
           </div>

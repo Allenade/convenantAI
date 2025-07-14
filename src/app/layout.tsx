@@ -4,8 +4,8 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Claude AI Replica",
-  description: "A replica of Claude.ai interface with dark/light theme",
+  title: "Covenant AI",
+  description: "Convenant Ai",
 };
 export default function RootLayout({
   children,
