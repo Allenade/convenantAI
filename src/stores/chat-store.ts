@@ -27,18 +27,17 @@ interface ChatState {
 const initialConversations: Conversation[] = [
   {
     id: "1",
-    title: "React components help",
+    title: "Tax and Transaction Records",
     messages: [
       {
         id: "1",
-        content: "Can you help me create a React component?",
+        content: "Show me companies with transaction amount above 100.",
         role: "user",
         timestamp: new Date(Date.now() - 1000 * 60 * 30),
       },
       {
         id: "2",
-        content:
-          "I'd be happy to help you create a React component! What kind of component are you looking to build?",
+        content: "There are 6 companies with a transaction amount above 100.",
         role: "assistant",
         timestamp: new Date(Date.now() - 1000 * 60 * 29),
       },
@@ -47,29 +46,22 @@ const initialConversations: Conversation[] = [
   },
   {
     id: "2",
-    title: "JavaScript best practices",
+    title: "Highest Tax Payers",
     messages: [
       {
         id: "3",
-        content: "What are some JavaScript best practices?",
+        content: "Who paid the highest tax?",
         role: "user",
         timestamp: new Date(Date.now() - 1000 * 60 * 60 * 2),
       },
       {
         id: "4",
-        content:
-          "Here are some key JavaScript best practices:\n\n1. Use const and let instead of var\n2. Write meaningful variable names\n3. Keep functions small and focused\n4. Use async/await for promises\n5. Handle errors properly",
+        content: "David Wilson Inc paid the highest tax.",
         role: "assistant",
         timestamp: new Date(Date.now() - 1000 * 60 * 60 * 2),
       },
     ],
     lastMessage: new Date(Date.now() - 1000 * 60 * 60 * 2),
-  },
-  {
-    id: "3",
-    title: "CSS Grid layout",
-    messages: [],
-    lastMessage: new Date(Date.now() - 1000 * 60 * 60 * 24),
   },
 ];
 
@@ -211,8 +203,7 @@ export const useChatStore = create<ChatState>()(
         setTimeout(() => {
           const assistantMessage: Message = {
             id: (Date.now() + 1).toString(),
-            content:
-              "I understand your question. This is a simulated response from Claude AI. In a real implementation, this would be connected to Anthropic's API to provide actual AI responses based on your input.",
+            content: "on it",
             role: "assistant",
             timestamp: new Date(),
           };
